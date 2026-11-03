@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GreenSeer is an auto-ML-inspired environmental intervention intelligence portfolio built with SAS Viya and source-grounded evidence.">
+  <title>GreenSeer · Environmental Intervention Intelligence</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to the project</a>
+  <header class="site-header">
+    <a class="brand" href="#overview" aria-label="GreenSeer home"><span class="brand-mark">G</span> GreenSeer</a>
+    <nav aria-label="Primary navigation">
+      <a href="#evidence">Evidence</a><a href="#models">Models</a><a href="#sas">SAS Viya</a><a href="#sources">Sources</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section id="overview" class="hero section-shell">
+      <div class="hero-copy">
+        <p class="eyebrow">SAS Hackathon · Healthcare &amp; Life Sciences</p>
+        <h1>From a documented intervention to an evidence-matched model.</h1>
+        <p class="hero-lede">GreenSeer is an <strong>auto-ML-inspired</strong> research system for exploring environmental interventions, checking what the data can support, comparing approved methods, and explaining the result with its source and limits intact.</p>
+        <div class="hero-actions"><a class="button primary" href="#evidence">Explore the evidence</a><a class="button secondary" href="#workflow">See the workflow</a></div>
+        <p class="team-line">Built by Ludlowe Legacy · Andrew Kutsch · Gamid Muratbekov · Adil Syed</p>
+      </div>
+      <div class="hero-visual" aria-label="GreenSeer workflow summary">
+        <div class="route-card"><span>01</span><strong>Interpret</strong><small>mechanism · place · time</small></div>
+        <div class="route-arrow" aria-hidden="true">→</div>
+        <div class="route-card"><span>02</span><strong>Route</strong><small>evidence and eligibility</small></div>
+        <div class="route-arrow" aria-hidden="true">→</div>
+        <div class="route-card accent"><span>03</span><strong>Compare</strong><small>approved model candidates</small></div>
+      </div>
+    </section>
+
+    <section class="metrics-strip section-shell" aria-label="Project coverage" id="metrics"></section>
+
+    <section id="workflow" class="section-shell section-block">
+      <div class="section-heading"><p class="eyebrow">One architecture · many scenarios</p><h2>The model changes when the evidence changes.</h2><p>A language-model-assisted interpretation can propose structure. Deterministic checks decide whether an approved workflow is eligible. Statistical models estimate the outcome. Those jobs stay separate.</p></div>
+      <div class="workflow-grid" id="workflow-grid"></div>
+    </section>
+
+    <section id="evidence" class="section-shell section-block">
+      <div class="section-heading"><p class="eyebrow">Four sectors · one discovery layer</p><h2>Start with the intervention, then inspect the evidence.</h2><p>Select a sector to see the retained case, place, period, measured outcome, and the exact boundary on what the result means.</p></div>
+      <div class="sector-grid" id="sector-grid" aria-label="Environmental sectors"></div>
+      <article class="case-panel" id="case-panel" aria-live="polite"></article>
+    </section>
+
+    <section id="models" class="section-shell section-block model-section">
+      <div class="section-heading"><p class="eyebrow">Model intelligence · held-out months</p><h2>Compare methods on the same future period.</h2><p>For the W. H. Sammis example, every method predicts the same 12 later months. Shorter bars mean lower root mean squared error—smaller prediction mistakes in the source-emissions intensity.</p></div>
+      <div class="visual-grid">
+        <figure class="chart-card"><figcaption><strong>Prediction error</strong><span>2013 test period · lb SO₂/MMBtu</span></figcaption><div id="model-chart" class="bar-chart"></div></figure>
+        <figure class="chart-card"><figcaption><strong>What moved CatBoost predictions?</strong><span>Average SHAP contribution in the test period · predictive, not causal</span></figcaption><div id="contribution-chart" class="diverging-chart"></div></figure>
+      </div>
+      <div class="model-note"><strong>Why this matters:</strong> GreenSeer does not force one algorithm onto every intervention. It compares only approved candidates that match the evidence structure, then preserves the validation period and claim type with the result.</div>
+    </section>
+
+    <section id="sas" class="section-shell section-block sas-section">
+      <div class="sas-copy"><p class="eyebrow">Powered by SAS Viya</p><h2>Analysis becomes a decision-support experience.</h2><p>SAS Visual Analytics provided the interactive discovery, mapping, filtering, model-comparison, and explanation layer used in the hackathon demonstration. SAS Retrieval Agent Manager added cited, source-grounded context without replacing the statistical workflow.</p><ul><li><strong>Visual Analytics:</strong> sector discovery, national coverage and model results</li><li><strong>Python in Viya:</strong> reusable preprocessing and analytical workflows</li><li><strong>SAS RAM:</strong> cited explanations from the curated evidence collection</li></ul></div>
+      <div class="sas-diagram" aria-label="SAS Viya capability map"><div>Discover<br><small>maps + filters</small></div><div>Model<br><small>compare + validate</small></div><div>Explain<br><small>cited context</small></div></div>
+    </section>
+
+    <section id="sources" class="section-shell section-block">
+      <div class="section-heading"><p class="eyebrow">Auditable by design</p><h2>Every public number stays attached to its meaning.</h2><p>The portfolio includes compact derived tables, not the private raw archive. Original agencies remain authoritative.</p></div>
+      <div class="source-grid" id="source-grid"></div>
+      <details class="disclosure"><summary>Evidence and product disclosures</summary><ul id="disclosures"></ul></details>
+    </section>
+  </main>
+
+  <footer><span>GreenSeer · Ludlowe Legacy</span><span>MIT-licensed public portfolio · 2026</span></footer>
+  <noscript><p>GreenSeer is an environmental intervention evidence and modeling portfolio. JavaScript is required for the interactive evidence cards and charts; the repository retains the underlying data and sources.</p></noscript>
+  <script src="app.js" defer></script>
+</body>
+</html>

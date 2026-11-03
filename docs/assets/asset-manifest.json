@@ -1,0 +1,28 @@
+{
+  "assets": [
+    {
+      "file": "assets/sector-power.webp",
+      "sector": "power",
+      "status": "ai_generated_illustration",
+      "source_artifact": "GreenSeer national discovery dashboard sector image"
+    },
+    {
+      "file": "assets/sector-residential.webp",
+      "sector": "residential",
+      "status": "ai_generated_illustration",
+      "source_artifact": "GreenSeer national discovery dashboard sector image"
+    },
+    {
+      "file": "assets/sector-transport.webp",
+      "sector": "transport",
+      "status": "ai_generated_illustration",
+      "source_artifact": "GreenSeer national discovery dashboard sector image"
+    },
+    {
+      "file": "assets/sector-industrial.webp",
+      "sector": "industrial",
+      "status": "ai_generated_illustration",
+      "source_artifact": "GreenSeer national discovery dashboard sector image"
+    }
+  ]
+}
