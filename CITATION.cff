@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+title: GreenSeer Environmental Intervention Intelligence
+message: "If you use the original GreenSeer code, please cite this repository."
+type: software
+version: 1.0.0
+date-released: 2026-11-03
+authors:
+  - family-names: Kutsch
+    given-names: Andrew
+  - family-names: Muratbekov
+    given-names: Gamid
+  - family-names: Syed
+    given-names: Adil
+license: MIT
