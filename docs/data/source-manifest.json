@@ -1,0 +1,31 @@
+{
+  "built_for": "GreenSeer public portfolio",
+  "sources": [
+    {
+      "name": "EPA Clean Air Markets Program Data",
+      "public_url": "https://campd.epa.gov/",
+      "project_use": "Power-unit emissions, fuel energy and control records"
+    },
+    {
+      "name": "EPA Air Quality System AirData",
+      "public_url": "https://aqs.epa.gov/aqsweb/airdata/download_files.html",
+      "project_use": "Ambient pollutant monitoring observations"
+    },
+    {
+      "name": "NOAA NCEI Synoptic Summary of the Day",
+      "public_url": "https://www.ncei.noaa.gov/oa/synoptic-summary-of-the-day/v2/access/by-year/",
+      "project_use": "Weather context used in retained experiments"
+    },
+    {
+      "name": "NOAA Global Historical Climatology Network Hourly",
+      "public_url": "https://www.ncei.noaa.gov/products/global-historical-climatology-network-hourly",
+      "project_use": "Hourly weather context used in retained experiments"
+    },
+    {
+      "name": "U.S. DOE Alternative Fuels Data Center",
+      "public_url": "https://afdc.energy.gov/laws",
+      "project_use": "Transportation policy and incentive records"
+    }
+  ],
+  "note": "Public outputs are compact derived artifacts. Original agencies remain the authoritative sources."
+}

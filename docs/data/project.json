@@ -1,0 +1,229 @@
+{
+  "project": "GreenSeer",
+  "tagline": "Taking pollution interventions to defensible insights, faster.",
+  "scope": "Public portfolio artifact built from retained GreenSeer evidence and model outputs.",
+  "metrics": [
+    {
+      "id": "records",
+      "value": 12811,
+      "meaning": "searchable intervention and evidence records"
+    },
+    {
+      "id": "monitoring_sites",
+      "value": 4815,
+      "meaning": "EPA ambient monitoring sites represented in the retained archive"
+    },
+    {
+      "id": "source_comparisons",
+      "value": 36,
+      "meaning": "completed source-level intervention comparisons"
+    },
+    {
+      "id": "nearby_air_comparisons",
+      "value": 1197,
+      "meaning": "retained intervention-to-nearby-air comparison links"
+    }
+  ],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "Evidence",
+      "description": "Collect documents, source records and monitoring observations."
+    },
+    {
+      "step": 2,
+      "name": "Interpret",
+      "description": "Structure the intervention mechanism, place and timing."
+    },
+    {
+      "step": 3,
+      "name": "Verify",
+      "description": "Apply eligibility checks and governed routing rules."
+    },
+    {
+      "step": 4,
+      "name": "Model",
+      "description": "Compare approved methods on the same evaluation period."
+    },
+    {
+      "step": 5,
+      "name": "Explain",
+      "description": "Report results, provenance and claim boundaries."
+    }
+  ],
+  "cases": [
+    {
+      "id": "sammis",
+      "canonical_intervention_id": "EPA_FGD_2866_1_2010-03-11",
+      "title": "W H Sammis — unit 1 SO₂ scrubber startup",
+      "sector": "power",
+      "place": "W H Sammis, Jefferson County, Ohio",
+      "period": "2007–2009 versus2011–2013;2010 omitted",
+      "outcome": "Source SO2 mass per unit of fuel energy",
+      "unit": "lb SO2/MMBtu",
+      "evidence_type": "observed_source_change",
+      "source": "https://campd.epa.gov/",
+      "finding": "86.82% observed SO₂ intensity decrease",
+      "interpretation": "Source intensity fell at unit1; other factors may have contributed. This is not an86.82% decline in surrounding air pollution.",
+      "claim_boundary": "Observed sulfur-dioxide emissions intensity at one generating unit; not ambient concentration or a causal effect.",
+      "causal_effect": false,
+      "template": "source_intensity_existing_v1",
+      "outcome_type": "source_emissions_intensity",
+      "observed_before": 1.2639985350013254,
+      "observed_after": 0.1666283872128816,
+      "observed_decrease_percent": 86.81735915044341
+    },
+    {
+      "id": "fairbanks",
+      "canonical_intervention_id": "residential_fairbanks_2020",
+      "title": "Fairbanks area: tighter winter wood-burning alerts",
+      "sector": "residential",
+      "place": "Fairbanks North Star Borough nonattainment area; selected monitor only",
+      "period": "Nov–Feb winters2017/18 &2018/19 versus2020/21 &2021/22",
+      "outcome": "Sampled winter PM2.5 concentration",
+      "unit": "µg/m³",
+      "evidence_type": "observed_ambient_change",
+      "source": "https://www.epa.gov/system/files/documents/2023-01/fairbanks-tsd-emissons-inventory-08-24-2022.pdf",
+      "finding": "Winter PM2.5: 13.22 → 13.86 µg/m³",
+      "interpretation": "Fine particles did not decline across these sampled winters. Weather and concurrent changes prevent attributing the difference to the rule.",
+      "claim_boundary": "This retained comparison is descriptive; it does not by itself identify a causal policy effect.",
+      "causal_effect": false,
+      "template": "ambient_period_summary_v1"
+    },
+    {
+      "id": "eureka-school-bus",
+      "canonical_intervention_id": "TRANSPORT_EUREKA_ELECTRIC_SCHOOL_BUS",
+      "title": "Eureka replaced a diesel school bus and documented a year of electric operation",
+      "sector": "transport",
+      "place": "Eureka City Schools, Eureka, Humboldt County, California, United States",
+      "period": "Reported 12-month collection; calendar boundaries unspecified",
+      "outcome": "Reported fleet activity and conditional operating-cost accounting",
+      "unit": "vehicle-miles",
+      "evidence_type": "verified_program_activity",
+      "source": "https://www.energy.ca.gov/sites/default/files/2024-12/CEC-600-2024-061.pdf",
+      "finding": "15,526 electric-bus miles documented",
+      "interpretation": "One completed bus replacement has reported operating data. Exhaust reductions remain the district’s engineering estimates, not measured ambient improvements.",
+      "claim_boundary": "This retained comparison is descriptive; it does not by itself identify a causal policy effect.",
+      "causal_effect": false,
+      "template": "fleet_activity_accounting_v1"
+    },
+    {
+      "id": "shenango",
+      "canonical_intervention_id": "INDUSTRIAL_SHENANGO_COKE_2016",
+      "title": "Shenango coke closure: nearby sulfur dioxide observations",
+      "sector": "industrial",
+      "place": "Neville Island / Avalon, Allegheny County, Pennsylvania",
+      "period": "2015 versus2016–2018",
+      "outcome": "Reported Avalon annual SO2 concentration",
+      "unit": "ppb",
+      "evidence_type": "observed_ambient_change",
+      "source": "https://www.sec.gov/Archives/edgar/data/28385/000093634018000082/dteenergy2017123110k.htm",
+      "finding": "Avalon SO₂: 1.49 → 0.19 ppb",
+      "interpretation": "The reported monitor channel recorded lower SO₂ after closure. A single baseline year and unresolved original monitor siting limit interpretation.",
+      "claim_boundary": "This retained comparison is descriptive; it does not by itself identify a causal policy effect.",
+      "causal_effect": false,
+      "template": "ambient_period_summary_v1"
+    }
+  ],
+  "model_comparison": [
+    {
+      "model": "Training-average baseline",
+      "model_id": "mean",
+      "block": "test",
+      "n_months": 12,
+      "mae": 0.5154904972943047,
+      "rmse": 0.5357872663292388,
+      "mean_error": 0.5154904972943047,
+      "unit": "lb SO2/MMBtu",
+      "evaluation_period": "2013-01 through 2013-12",
+      "meaning": "Lower RMSE means predictions were closer to the measured monthly source intensity in the held-out period.",
+      "causal_effect": false
+    },
+    {
+      "model": "Ridge regression",
+      "model_id": "ridge",
+      "block": "test",
+      "n_months": 12,
+      "mae": 0.19523163443242428,
+      "rmse": 0.23427423785980356,
+      "mean_error": -0.19523163443242428,
+      "unit": "lb SO2/MMBtu",
+      "evaluation_period": "2013-01 through 2013-12",
+      "meaning": "Lower RMSE means predictions were closer to the measured monthly source intensity in the held-out period.",
+      "causal_effect": false
+    },
+    {
+      "model": "Histogram gradient boosting",
+      "model_id": "hist_gradient_boosting",
+      "block": "test",
+      "n_months": 12,
+      "mae": 0.18476720705248706,
+      "rmse": 0.23607231860171146,
+      "mean_error": -0.18476720705248706,
+      "unit": "lb SO2/MMBtu",
+      "evaluation_period": "2013-01 through 2013-12",
+      "meaning": "Lower RMSE means predictions were closer to the measured monthly source intensity in the held-out period.",
+      "causal_effect": false
+    },
+    {
+      "model": "CatBoost",
+      "model_id": "catboost",
+      "block": "test",
+      "n_months": 12,
+      "mae": 0.16796456496568868,
+      "rmse": 0.2174399762656374,
+      "mean_error": -0.16773221786027645,
+      "unit": "lb SO2/MMBtu",
+      "evaluation_period": "2013-01 through 2013-12",
+      "meaning": "Lower RMSE means predictions were closer to the measured monthly source intensity in the held-out period.",
+      "causal_effect": false
+    }
+  ],
+  "prediction_contributions": [
+    {
+      "feature": "After reported equipment start",
+      "feature_id": "post_start",
+      "mean_signed_contribution": -0.3974623871827169,
+      "unit": "lb SO2/MMBtu of model prediction",
+      "meaning": "Predictive contribution in the held-out period; negative values moved the model prediction downward.",
+      "causal_effect": false
+    },
+    {
+      "feature": "Fuel-energy activity",
+      "feature_id": "log_heat_input",
+      "mean_signed_contribution": 0.012471992349714703,
+      "unit": "lb SO2/MMBtu of model prediction",
+      "meaning": "Predictive contribution in the held-out period; negative values moved the model prediction downward.",
+      "causal_effect": false
+    },
+    {
+      "feature": "Position in time",
+      "feature_id": "relative_time",
+      "mean_signed_contribution": -0.3184279942631649,
+      "unit": "lb SO2/MMBtu of model prediction",
+      "meaning": "Predictive contribution in the held-out period; negative values moved the model prediction downward.",
+      "causal_effect": false
+    },
+    {
+      "feature": "Seasonal cycle (sine)",
+      "feature_id": "month_sin",
+      "mean_signed_contribution": 0.007562205475910294,
+      "unit": "lb SO2/MMBtu of model prediction",
+      "meaning": "Predictive contribution in the held-out period; negative values moved the model prediction downward.",
+      "causal_effect": false
+    },
+    {
+      "feature": "Seasonal cycle (cosine)",
+      "feature_id": "month_cos",
+      "mean_signed_contribution": 0.0003268038408052213,
+      "unit": "lb SO2/MMBtu of model prediction",
+      "meaning": "Predictive contribution in the held-out period; negative values moved the model prediction downward.",
+      "causal_effect": false
+    }
+  ],
+  "disclosures": [
+    "GreenSeer is auto-ML inspired: routing is governed and auditable, not an unrestricted autonomous model generator.",
+    "Observed source changes, ambient changes, predictive explanations and causal effects are different evidence types.",
+    "The public site contains compact derived tables, not the full private data archive or SAS Viya environment."
+  ]
+}

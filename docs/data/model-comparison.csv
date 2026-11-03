@@ -1,0 +1,5 @@
+model,model_id,block,n_months,mae,rmse,mean_error,unit,evaluation_period,meaning,causal_effect
+Training-average baseline,mean,test,12,0.5154904972943047,0.5357872663292388,0.5154904972943047,lb SO2/MMBtu,2013-01 through 2013-12,Lower RMSE means predictions were closer to the measured monthly source intensity in the held-out period.,False
+Ridge regression,ridge,test,12,0.19523163443242428,0.23427423785980356,-0.19523163443242428,lb SO2/MMBtu,2013-01 through 2013-12,Lower RMSE means predictions were closer to the measured monthly source intensity in the held-out period.,False
+Histogram gradient boosting,hist_gradient_boosting,test,12,0.18476720705248706,0.23607231860171146,-0.18476720705248706,lb SO2/MMBtu,2013-01 through 2013-12,Lower RMSE means predictions were closer to the measured monthly source intensity in the held-out period.,False
+CatBoost,catboost,test,12,0.16796456496568868,0.2174399762656374,-0.16773221786027645,lb SO2/MMBtu,2013-01 through 2013-12,Lower RMSE means predictions were closer to the measured monthly source intensity in the held-out period.,False
