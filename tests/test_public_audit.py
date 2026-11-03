@@ -75,6 +75,16 @@ class PublicPackageAuditTests(unittest.TestCase):
         )
         self.assertEqual([], findings)
 
+    def test_release_scan_ignores_auditor_rules_and_test_fixtures(self):
+        findings = self.audit_fixture(
+            {
+                "scripts/audit_public_package.py": r"RULE = 'C:\\Users\\'",
+                "tests/test_public_audit.py": "api_key = sk-example-fixture",
+                "docs/index.html": "<main>GreenSeer</main>",
+            }
+        )
+        self.assertEqual([], findings)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -14,6 +14,8 @@ TEXT_SUFFIXES = {
 }
 ARCHIVE_SUFFIXES = {".7z", ".gz", ".rar", ".tar", ".tgz", ".zip"}
 INTERNAL_DIRECTORIES = {".agents", ".aws", ".codex", ".venv", "rawdata", "viya_transfer"}
+AUDIT_EXCLUDED_PREFIXES = {"tests"}
+AUDIT_EXCLUDED_FILES = {"scripts/audit_public_package.py"}
 TEXT_RULES = (
     ("local-path", re.compile(r"[A-Za-z]:\\Users\\", re.IGNORECASE), "local user path"),
     ("sas-tenant", re.compile(r"https?://[^\s\"']*engage\.sas\.com", re.IGNORECASE), "SAS tenant URL"),
@@ -42,6 +44,8 @@ def audit_tree(root: Path, max_bytes: int = 50_000_000) -> list[Finding]:
         if ".git" in relative.parts or "__pycache__" in relative.parts:
             continue
         display = relative.as_posix()
+        if relative.parts[0].lower() in AUDIT_EXCLUDED_PREFIXES or display in AUDIT_EXCLUDED_FILES:
+            continue
         internal = next((part for part in relative.parts if part.lower() in INTERNAL_DIRECTORIES), None)
         if internal:
             findings.append(Finding(display, "internal-directory", f"private directory: {internal}"))
