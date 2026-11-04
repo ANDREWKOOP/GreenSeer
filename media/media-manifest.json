@@ -1,0 +1,35 @@
+{
+  "items": [
+    {
+      "file": "docs/screenshots/discover.webp",
+      "source_artifact": "GreenSeer SAS Visual Analytics discovery-page capture",
+      "edits": "Resized to a maximum 1500 by 1000 pixels and converted to WebP; no analytical content changed",
+      "license_status": "Team-created project screenshot; released with this portfolio"
+    },
+    {
+      "file": "docs/screenshots/model-comparison.webp",
+      "source_artifact": "GreenSeer SAS Visual Analytics model-comparison capture",
+      "edits": "Resized to a maximum 1500 by 1000 pixels and converted to WebP; no analytical content changed",
+      "license_status": "Team-created project screenshot; released with this portfolio"
+    },
+    {
+      "file": "docs/screenshots/cited-explanation.webp",
+      "source_artifact": "GreenSeer SAS Retrieval Agent Manager cited-answer capture",
+      "edits": "Resized to a maximum 1500 by 1000 pixels and converted to WebP; no tenant URL or credential displayed",
+      "license_status": "Team-created project screenshot; SAS interface shown for portfolio documentation"
+    },
+    {
+      "file": "docs/screenshots/national-coverage.webp",
+      "source_artifact": "GreenSeer SAS Visual Analytics national-coverage capture",
+      "edits": "Resized to a maximum 1500 by 1000 pixels and converted to WebP; no analytical content changed",
+      "license_status": "Team-created project screenshot; released with this portfolio"
+    },
+    {
+      "file": "docs/screenshots/sammis-result.webp",
+      "source_artifact": "GreenSeer SAS Visual Analytics Sammis result capture",
+      "edits": "Resized to a maximum 1500 by 1000 pixels and converted to WebP; no analytical content changed",
+      "license_status": "Team-created project screenshot; released with this portfolio"
+    }
+  ],
+  "video": "Omitted from the GitHub release at the project owner's request"
+}
