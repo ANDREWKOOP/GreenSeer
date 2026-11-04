@@ -41,8 +41,8 @@ The public portfolio includes four documented cases across power generation, res
 Requirements: Python 3.11+; no third-party Python packages are required for the public example.
 
 ```powershell
-git clone https://github.com/OWNER/greenseer-environmental-intelligence.git
-cd greenseer-environmental-intelligence
+git clone https://github.com/ANDREWKOOP/GreenSeer.git
+cd GreenSeer
 python -m unittest discover -s tests -v
 python examples/run_sammis_example.py
 python -m http.server 8000 --directory docs
