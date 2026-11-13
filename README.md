@@ -8,7 +8,7 @@ GreenSeer does not apply one model to every policy. It structures an interventio
 
 ## Project at a glance
 
-- **12,811 searchable intervention and evidence records** in the retained discovery library—not 12,811 measured policy effects.
+- **12,811 searchable intervention and evidence records** in the retained discovery library
 - **4,815 EPA ambient monitoring sites** represented in the retained archive.
 - **36 completed source-level intervention comparisons** in the national power-sector expansion.
 - **1,197 retained intervention-to-nearby-air comparison links** for further screening, not 1,197 causal estimates.
